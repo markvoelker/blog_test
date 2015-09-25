@@ -92,18 +92,18 @@ indicator, we find:
 So of the 12 criteria, 7 are looking at trailing indicators of adoption,
 4 aren’t really either, and 1 is a leading indicator.  It’s
 also maybe worth pointing out that using current levels of real-world
-interoperability as the starting point has been discussed by Board
-members since at least 2013 [1], so the idea that DefCore is weighted
-toward trailing indicators of adoption isn't new.  That said, adherence
-to DefCore’s Guidelines only became a requirement to get a trademark/logo
-license agreement from the OpenStack Foundation in the past 6 months or so,
-so we probably now have a lot more people now paying attention and
-interested in providing feedback.  
+interoperability as the starting point has been [discussed by longtime
+Board members since at least 2013](https://blogs.gnome.org/markmc/2013/10/30/openstack-core-and-interoperability/),
+so the idea that DefCore is weighted toward trailing indicators of 
+adoption isn't new.  That said, adherence to DefCore’s Guidelines only
+became a requirement to get a trademark/logo license agreement from the
+OpenStack Foundation in the past 6 months or so, so we probably now have
+a lot more people now paying attention and interested in providing feedback.  
 
 Some of those discussions have indicated that at least part of the
 community feels that the current criteria are perhaps *too* heavily
-weighted toward trailing indicators.  To that end, 
-[some](https://review.openstack.org/226978)
+weighted toward trailing indicators.  Personally, I tend to agree.  To
+that end, [some](https://review.openstack.org/226978)
 [discussions](https://review.openstack.org/226980) have already begun
 about proposing changes to the Board of Directors concerning weighting of
 criteria.
