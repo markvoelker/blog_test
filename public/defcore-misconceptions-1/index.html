@@ -167,7 +167,8 @@
 
 <h1 id="defcore-misconceptions-part-1-leading-vs-trailing-indicators:53a12560909fdb70283c3c8820d03ac2">DefCore Misconceptions Part 1: Leading vs Trailing Indicators</h1>
 
-<p><em>DefCore isn&rsquo;t a new creature in the OpenStack community: it&rsquo;s been in
+<p><em><a href="https://wiki.openstack.org/wiki/DefCore">DefCore</a> isn&rsquo;t a new
+creature in the OpenStack community: it&rsquo;s been in
 discussion since at least 2013.  However it was only earlier in 2015
 that adherance to DefCore Guidelines became a requirement for products
 that want to use the OpenStack name and OpenStack Powered logo.  As a
@@ -189,6 +190,11 @@ products.</p>
 
 <p><strong>This actually isn&rsquo;t the case (today).</strong></p>
 
+<p>Well, more accurately: it&rsquo;s only partly true.  DefCore does set standards
+that vendors have to adhere to if they want to use the OpenStack
+trademark or logo&hellip;but most of how those standards are defined is by
+looking at what the market has already accepted.</p>
+
 <p>The criteria that the Board of Directors has approved for DefCore to use
 in establishing interoperability standards today are strongly weighted
 toward requiring capabilities that have <em>already</em> gained wide
@@ -201,39 +207,39 @@ them to see whether they&rsquo;re more of a leading indicator or a trailing
 indicator, we find:</p>
 
 <ul>
-<li>Widely deployed: <strong>trailing</strong>.  No points are awarded for this
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n40">Widely Deployed</a>: <strong>trailing</strong>.  No points are awarded for this
 Criteria unless products are already supporting the Capability in
 question.</li>
-<li>Used by Tools: <strong>trailing</strong>.  Tools are mostly unlikely adopt a new
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n44">Used by Tools</a>: <strong>trailing</strong>.  Tools are mostly unlikely adopt a new
 feature/API the minute it’s released.  Rather, they tend to lag and
 add support for it when the tool&rsquo;s users demand for it is sufficient.</li>
-<li>Used by Clients: <strong>trailing</strong>.  See Used by Tools.</li>
-<li>Future Direction: <strong>leading</strong>.  If the project (for example, Nova) or
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n48">Used by Clients</a>: <strong>trailing</strong>.  See Used by Tools.</li>
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n54">Future Direction</a>: <strong>leading</strong>.  If the project (for example, Nova) or
 the TC says a Capability is going away in the future, no points are
 awarded even if the Capability isn&rsquo;t gone yet.</li>
-<li>Complete: <strong>trailing</strong> (sort of).  If the capability is plugin dependent,
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n61">Complete</a>: <strong>trailing</strong> (sort of).  If the capability is plugin dependent,
 all plugins have to support it.  That doesn&rsquo;t always happen immediatly
 when a feature is released (unless the project requires it) so we&rsquo;ll
 call that a trailing indicator.<br /></li>
-<li>Stable: <strong>trailing</strong>.  The capability has to have been present in 3 or
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n58">Stable</a>: <strong>trailing</strong>.  The capability has to have been present in 3 or
 more OpenStack releases, which means the capability has to have been
 released for 18 months before it gets points here.</li>
-<li>Foundational: <strong>trailing</strong>.  Other capabilities are unlikely to
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n84">Foundational</a>: <strong>trailing</strong>.  Other capabilities are unlikely to
 be dependent on a very new thing.  In fact there are numerous examples
 of the opposite: for instance, until around the Juno timeframe
 neutronclient (on which any Neutron capabilties that require
 authentication would depend) supported only the Keystone v2 API.  The
 Keystone v3 API was introduced as far back as Grizzly.</li>
-<li>Atomic: <strong>neither</strong>.<br /></li>
-<li>Proximity: <strong>neither</strong>.</li>
-<li>Discoverable: <strong>neither</strong>.</li>
-<li>Documented: <strong>neither</strong> (or maybe in some instances trailing).  In
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n87">Atomic</a>: <strong>neither</strong>.<br /></li>
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n90">Proximity</a>: <strong>neither</strong>.</li>
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n70">Discoverable</a>: <strong>neither</strong>.</li>
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n73">Documented</a>: <strong>neither</strong> (or maybe in some instances trailing).  In
 most cases major new capabilties get documented when released (the
 community has generally gotten a lot better about this over the years
 IMHO).  There are still some cases where a capability isn&rsquo;t well
 documented up front though, and does get documented at some later
 point.  In that sense you might call this a trailing indicator.<br /></li>
-<li>DefCore in Last Release: <strong>trailing</strong>.  A capability only scores
+<li><a href="http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n77">DefCore in Last Release</a>: <strong>trailing</strong>.  A capability only scores
 points here if it was required six months ago in the last DefCore
 Guideline as well (which also means the Capability was likely present in at
 least three OpenStack releases per the &ldquo;Stable&rdquo; criteria, so in
