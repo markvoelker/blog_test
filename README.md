@@ -1,1 +1,1 @@
-# futurerelics_blog
+# blog
