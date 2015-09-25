@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Test Blog Interface</title>
-    <link>http://markvoelker.github.io/futurerelics_blog/</link>
-    <description>Recent content on Hugo Test Blog Interface</description>
+    <title>Technology is Fun Because It&#39;s Always Changing</title>
+    <link>http://markvoelker.github.io/blog/</link>
+    <description>Recent content on Technology is Fun Because It&#39;s Always Changing</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 25 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://markvoelker.github.io/futurerelics_blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://markvoelker.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DefCore Misconceptions Part 1: Leading vs Trailing Indicators</title>
-      <link>http://markvoelker.github.io/futurerelics_blog/defcore-misconceptions-1</link>
+      <link>http://markvoelker.github.io/blog/defcore-misconceptions-1</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://markvoelker.github.io/futurerelics_blog/defcore-misconceptions-1</guid>
+      <guid>http://markvoelker.github.io/blog/defcore-misconceptions-1</guid>
       <description>
 
 &lt;h1 id=&#34;defcore-misconceptions-part-1-leading-vs-trailing-indicators:53a12560909fdb70283c3c8820d03ac2&#34;&gt;DefCore Misconceptions Part 1: Leading vs Trailing Indicators&lt;/h1&gt;
