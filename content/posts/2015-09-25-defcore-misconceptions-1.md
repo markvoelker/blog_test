@@ -1,14 +1,12 @@
----
-title: "DefCore Misconceptions Part 1: Leading vs Trailing Indicators"
-date: "2015-09-25"
-url: "/defcore-misconceptions-1"
-socialsharing: true
-description: "Did you know DefCore is more of an indication of what the market has determined to be interoperable than a visionary standard that tells the market what to think?"
-categories:
-  - "DefCore"
-  - "OpenStack"
-  - "Misconceptions"
----
++++
+title = "DefCore Misconceptions Part 1: Leading vs Trailing Indicators"
+author = "markvoelker"
+date = "2015-09-25"
+url = "/defcore-misconceptions-1"
+socialsharing = true
+description = "Did you know DefCore is more of an indication of what the market has determined to be interoperable than a visionary standard that tells the market what to think?"
+categories = ["DefCore","OpenStack","Misconceptions"]
++++
 
 DefCore Misconceptions Part 1: Leading vs Trailing Indicators
 =============================================================
