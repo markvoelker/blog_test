@@ -13,6 +13,10 @@ canonifyurls = true
   sidebartitle = "Future Relics"
   sidebartagline = "Everything we work on goes obsolete someday--and that's what makes it so much fun."
 
+[[menu.main]]
+  name = "RSS"
+  url = "/index.xml"
+
 [[menu.social]]
   pre = "<i class='fa fa-twitter'></i>"
   url = "http://www.twitter.com/marktvoelker"
@@ -26,3 +30,7 @@ canonifyurls = true
 [[menu.footer]]
   name = "Blog"
   url = "/posts"
+
+[[menu.footer]]
+  name = "RSS"
+  url = "/index.xml"
