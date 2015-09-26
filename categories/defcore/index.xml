@@ -14,11 +14,7 @@
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>http://markvoelker.github.io/blog/defcore-misconceptions-1</guid>
-      <description>
-
-&lt;h1 id=&#34;defcore-misconceptions-part-1-leading-vs-trailing-indicators:53a12560909fdb70283c3c8820d03ac2&#34;&gt;DefCore Misconceptions Part 1: Leading vs Trailing Indicators&lt;/h1&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://wiki.openstack.org/wiki/DefCore&#34;&gt;DefCore&lt;/a&gt; isn&amp;rsquo;t a new
+      <description>&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://wiki.openstack.org/wiki/DefCore&#34;&gt;DefCore&lt;/a&gt; isn&amp;rsquo;t a new
 creature in the OpenStack community: it&amp;rsquo;s been in
 discussion since at least 2013.  However it was only earlier in 2015
 that adherance to DefCore Guidelines became a requirement for products
