@@ -8,9 +8,6 @@ description = "Did you know DefCore is more of an indication of what the market 
 categories = ["DefCore","OpenStack","Misconceptions"]
 +++
 
-DefCore Misconceptions Part 1: Leading vs Trailing Indicators
-=============================================================
-
 *[DefCore](https://wiki.openstack.org/wiki/DefCore) isn't a new 
 creature in the OpenStack community: it's been in
 discussion since at least 2013.  However it was only earlier in 2015
