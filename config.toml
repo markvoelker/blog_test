@@ -1,7 +1,7 @@
 contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
-baseurl = "http://markvoelker.github.io/blog"
+baseurl = "http://markvoelker.github.io/blog_test"
 title = "Technology is Fun Because It's Always Changing"
 canonifyurls = true
 
