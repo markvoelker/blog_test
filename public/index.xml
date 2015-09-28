@@ -2,266 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technology is Fun Because It&#39;s Always Changing</title>
-    <link>http://localhost:1313/blog_test/</link>
+    <link>http://markvoelker.github.io/blog_test/</link>
     <description>Recent content on Technology is Fun Because It&#39;s Always Changing</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 29 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog_test/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>DefCore Misconceptions Part 3: Deprecation (or: &#39;Who&#39;s on First?&#39;)</title>
-      <link>http://localhost:1313/blog_test/defcore-misconceptions-3</link>
-      <pubDate>Tue, 29 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/blog_test/defcore-misconceptions-3</guid>
-      <description>&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://wiki.openstack.org/wiki/DefCore&#34;&gt;DefCore&lt;/a&gt; isn&amp;rsquo;t a new
-creature in the OpenStack community: it&amp;rsquo;s been in
-discussion since at least 2013.  However it was only earlier in 2015
-that adherance to DefCore Guidelines became a requirement for products
-that want to use the OpenStack name and OpenStack Powered logo.  As a
-result, a lot more people are now interested in DefCore than in the
-past.  As we&amp;rsquo;ve started receiving a lot more feedback about DefCore,
-it&amp;rsquo;s become apparent that there are a few misconceptions out there from
-folks who are new to DefCore.  Personally I held some of those same
-misconceptions when I started participating in DefCore about 9 months
-ago.  This series of posts is intended to lay some of those
-misconceptions to rest and help folks learn more about DefCore is, how
-it works, and what it&amp;rsquo;s trying to accomplish.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;One of the concerns I&amp;rsquo;ve been hearing about lately concerning DefCore has to
-do with what the implications of a
-&lt;a href=&#34;http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/Lexicon.rst#n16&#34;&gt;Capability&lt;/a&gt;
-being required actually are.  So, let&amp;rsquo;s start off by talking a little about
-what Capabilties are and what their lifecycle is like.&lt;/p&gt;
-
-&lt;p&gt;In the &lt;a href=&#34;http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/Lexicon.rst&#34;&gt;DefCore
-Lexicon&lt;/a&gt;,
-a Capability basically boils down to a thing that you can ask the OpenStack
-software to do for you.  For example, you might ask OpenStack to give you a
-list of all images available for you to boot instances from, or you might ask
-OpenStack to create an L2 network for you.  Very often, Capabilities more or
-less boil down to API calls (there&amp;rsquo;s a Neutron API call to create networks, for
-example).  Capabilities that make it into a DefCore Guideline are also
-required to have tests that can be used by vendors to prove that they have
-exposed those Capabilities to end users.  Generally, those tests are the same
-ones that the project in question already uses in it&amp;rsquo;s gate via Tempest (that
-way we know that everyone is using the same tests and that the developers of
-the project feel those tests accurately define the feature in question).
-Capabilities must also be exposed to end users of the cloud (e.g.
-tenants) since those are the people DefCore is currently trying to provide
-with interoperable ways of interacting with clouds.&lt;/p&gt;
-
-&lt;p&gt;Like any other piece of software, OpenStack changes over time&amp;hellip;pretty
-dramatically sometimes.  In the &lt;a href=&#34;http://www.openstack.org/software/kilo/&#34;&gt;Kilo
-release&lt;/a&gt; for example, 1,492 people
-from more than 169 organizations all over the world created 394 new features,
-and fixed 7,257 bugs at it&amp;rsquo;s intial release.  Sometimes features also go away
-and code is removed or replaced.&lt;/p&gt;
-
-&lt;p&gt;One of the interesting bits about the fact that Capabilities are exposed to
-users via API calls is that &lt;a href=&#34;http://developer.openstack.org/api-ref.html&#34;&gt;API&amp;rsquo;s are
-&lt;em&gt;versioned&lt;/em&gt;&lt;/a&gt;.  That means that they
-change over time, and older API&amp;rsquo;s may eventually be deprecated and removed
-from the project (Cinder&amp;rsquo;s v1 API is now deprecated, for example).  I&amp;rsquo;ll use
-major changes in the API to talk about the lifecycle of DefCore Capabilities
-here since it provides a convenient way to illustrate the story.&lt;/p&gt;
-
-&lt;p&gt;Keystone currently has two supported major versions of it&amp;rsquo;s API: v3 is
-considered &amp;ldquo;CURRENT&amp;rdquo; and v2 is also &amp;ldquo;SUPPORTED&amp;rdquo; (v1 was deprecated and removed
-a long time ago).  &lt;a href=&#34;http://git.openstack.org/cgit/openstack/tempest/tree/tempest/api/identity&#34;&gt;The
-tests&lt;/a&gt;
-that are used at the gate to ensure that those API&amp;rsquo;s are working as
-expected when developers make changes to the code are also written against
-either the &lt;a href=&#34;http://git.openstack.org/cgit/openstack/tempest/tree/tempest/api/identity/v2&#34;&gt;v2
-API&lt;/a&gt;
-or the
-&lt;a href=&#34;http://git.openstack.org/cgit/openstack/tempest/tree/tempest/api/identity/v3&#34;&gt;v3
-API&lt;/a&gt;.
-So if the DefCore Committee wants to add Capabilities provided by Keystone to
-it&amp;rsquo;s Guidelines, it first needs to decide which ones it wants: the v2 ones,
-the v3 ones, or both.  Remember, the capability of (for example) generating an
-authentication token is exposed to end users differently by those two API&amp;rsquo;s:
-if I&amp;rsquo;m a developer writing an application that I want to interact with
-OpenStack clouds, I need to decide whether I make my application call the v2
-API or the v3 API and code it up accordingly.  Vendors shipping OpenStack
-distributions, running public clouds, etc also have to actually expose those
-API&amp;rsquo;s to you before you can use them (and likewise, they also have to choose
-whether to expose v2, v3, or both).&lt;/p&gt;
-
-&lt;p&gt;So let&amp;rsquo;s imagine for a moment that DefCore ends up requiring some capabilties
-of both v2 and v3 in one of it&amp;rsquo;s Guidelines (which might be a reasonable
-approach to take for a while given that you can run both API&amp;rsquo;s concurrently
-and doing so allows application developers some time to move their
-applications from using v2 to using v3).  Eventually though, Keystone might
-decide to deprecate the v2 API.&lt;/p&gt;
-
-&lt;p&gt;But wait a minute&amp;hellip;.vendors who want to run an OpenStack Powered&amp;trade; public
-cloud, ship a distribution or appliance, or provide a managed offering are
-required to expose the v2 API, right?  So the Keystone project can&amp;rsquo;t deprecate
-it, right?  Doesn&amp;rsquo;t DefCore have to stop requiring the capability before it
-can be deprecated from the code as well in a case like this?&lt;/p&gt;
-
-&lt;p&gt;It turns out, the answer is &lt;em&gt;no&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;First, it&amp;rsquo;s important to understand when DefCore creates Guidelines.  The
-schedule for doing so is actually laid out in
-&lt;a href=&#34;http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/2015A.rst#n10&#34;&gt;a procedural
-document&lt;/a&gt;
-that&amp;rsquo;s approved by the OpenStack Board of Directors.  That schedule looks like
-this:&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Time Frame&lt;/th&gt;
-&lt;th&gt;Milestone&lt;/th&gt;
-&lt;th&gt;Activities&lt;/th&gt;
-&lt;th&gt;Lead By&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;-3 months&lt;/td&gt;
-&lt;td&gt;S-3&lt;/td&gt;
-&lt;td&gt;&amp;ldquo;Preliminary&amp;rdquo; draft (from current)&lt;/td&gt;
-&lt;td&gt;DefCore&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-2 months&lt;/td&gt;
-&lt;td&gt;S-2&lt;/td&gt;
-&lt;td&gt;ID new Capabilities&lt;/td&gt;
-&lt;td&gt;Community&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;-1 month&lt;/td&gt;
-&lt;td&gt;S-1&lt;/td&gt;
-&lt;td&gt;Score Capabilities&lt;/td&gt;
-&lt;td&gt;DefCore&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Summit&lt;/td&gt;
-&lt;td&gt;S&lt;/td&gt;
-&lt;td&gt;&amp;ldquo;Solid&amp;rdquo; draft&lt;/td&gt;
-&lt;td&gt;Community&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;Summit&lt;/td&gt;
-&lt;td&gt;S&lt;/td&gt;
-&lt;td&gt;Advisory/Deprecated items selected&lt;/td&gt;
-&lt;td&gt;DefCore&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;+1 month&lt;/td&gt;
-&lt;td&gt;S+1&lt;/td&gt;
-&lt;td&gt;Self-testing&lt;/td&gt;
-&lt;td&gt;Vendors&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;+2 months&lt;/td&gt;
-&lt;td&gt;S+2&lt;/td&gt;
-&lt;td&gt;Test Flagging&lt;/td&gt;
-&lt;td&gt;DefCore&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;+3 months&lt;/td&gt;
-&lt;td&gt;S+3&lt;/td&gt;
-&lt;td&gt;Approve Guidance&lt;/td&gt;
-&lt;td&gt;Board&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Notice that the DefCore cycle is actually offset from the OpenStack release
-cycle by a couple of months: generally when we gather for an OpenStack Summit
-we&amp;rsquo;ve just ended one development cycle with a new stable release of OpenStack
-and are starting another.  By contrast, the DefCore Committee is smack in the
-middle of it&amp;rsquo;s work cycle, and uses the Summit as a chance to publicize a
-reasonably solid draft of it&amp;rsquo;s proposed next Guideline to the community.  The
-actual approval of that Guideline doesn&amp;rsquo;t happen until three months later.&lt;/p&gt;
-
-&lt;p&gt;Because Guidelines don&amp;rsquo;t solidify until near the end of the development cycle,
-the DefCore Committee has an opportunity to evaluate decisions the community
-has made regarding the direction of the code: for example, if Keystone were
-going to deprecate the v2 API, they&amp;rsquo;d almost certainly have decided on
-doing so well in advance of the summit and could communicate that intent
-to the Committee.  DefCore would then have the opportunity to deprecate the
-corresponding Capabilties from it&amp;rsquo;s draft Guideline.  You might recall that in
-order to make a new Capability required in a Guideline, it has to spend
-&lt;a href=&#34;http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/2015A.rst#n113&#34;&gt;one six-month cycle in advisory status
-first&lt;/a&gt;.
-The same waiting period &lt;em&gt;doesn&amp;rsquo;t apply to deprecation&lt;/em&gt;.  That&amp;rsquo;s because when
-we add a new Capability, it&amp;rsquo;s reasonable to give vendors some time to either
-update their products to support that Capability or tell us why they think
-that Capability shouldn&amp;rsquo;t actually be required.  When we deprecate a
-Capability though, vendors don&amp;rsquo;t actually have to do anything.  All it
-means is that they&amp;rsquo;re no longer &lt;em&gt;required&lt;/em&gt; to offer the Capability.  If they
-want to provide it anyway, there&amp;rsquo;s no prohibition against doing so and
-therefore no waiting period is necessary.&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s important to remember that DefCore&amp;rsquo;s Guidelines are generally
-trailing indicators of market acceptance (which I wrote about in
-&lt;a href=&#34;../defcore-misconceptions-1/&#34;&gt;this earlier post&lt;/a&gt;).  So when a project wants
-to deprecate a Capability that&amp;rsquo;s currently required, it&amp;rsquo;s generally a good
-idea to tell the end-user community about it.  That&amp;rsquo;s why we actually have a
-&amp;ldquo;deprecated&amp;rdquo; state in Guidelines rather than simply ommitting them from the
-document entirely: it helps call out that a thing that was required in the
-past no longer is.  In some respects, a Capability being required can also
-help foster an informed decision for a project about when to deprecate
-something: since the DefCore Committee is a trailing indicator, the Committee
-can generally offer the project some information along the lines of &amp;ldquo;you know,
-an awful lot of client toolkits are still using that version of the API, so if
-we remove it they&amp;rsquo;re going to be up a creek&amp;rdquo;.  That doesn&amp;rsquo;t necessarily mean
-the project won&amp;rsquo;t or shouldn&amp;rsquo;t deprecate something (maybe deprecation is how a
-project wants to signal externally developed toolkits that it&amp;rsquo;s time to start
-using the newer API, for example), but it does help them make an informed
-decision.&lt;/p&gt;
-
-&lt;p&gt;Before we wrap up, we should probably say a word or two about standards and
-deprecation.  DefCore&amp;rsquo;s Guidelines effectively are standards for
-interoperability among OpenStack Powered&amp;trade; products in that they require
-that all products bearing the name/logo expose certain capabilities in a way
-that people can rely on them and code against.  One way to measure the success
-of an interoperability standard is by how many products adhere to it.  If the
-DefCore Committee rolls out a new Guideline and only one or two vendors ever
-test against it, the standard isn&amp;rsquo;t all that useful in that end users only
-have one or two products to choose from that they know expose the capabilities
-in the Guideline.  Another way to measure the success of an interoperability
-standard is by how many end users use it.  If Capabilities are dropped from
-Guidelines frequently, end users may get frustrated that they keep having to
-change their code because Capabilties they depended on have gone away.  In
-that sense, we generally want to be careful about churn in DefCore Guidelines.
-That&amp;rsquo;s not new information for the OpenStack developer community either.  The
-Technical Committee actually recently
-&lt;a href=&#34;http://git.openstack.org/cgit/openstack/governance/tree/reference/tags/assert_follows-standard-deprecation.rst&#34;&gt;created a
-tag&lt;/a&gt;
-to help people understand which projects follow a standard deprecation policy.
-If you read the criteria for projects that get the tag, one of them actually
-says that the project will
-&lt;a href=&#34;http://git.openstack.org/cgit/openstack/governance/tree/reference/tags/assert_follows-standard-deprecation.rst#n65&#34;&gt;&amp;ldquo;take into account defcore capabilities deprecation
-schedule&amp;rdquo;&lt;/a&gt;.
-That&amp;rsquo;s good news for everyone and helps the Guidelines accurately reflect the
-direction the project is taking.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Questions?  Comments?  Drop by #openstack-defcore on IRC or drop the
-DefCore Committee a line at
-&lt;a href=&#34;mailto:defcore-committee@lists.openstack.org&#34;&gt;defcore-committee@lists.openstack.org&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
+    <lastBuildDate>Mon, 28 Sep 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://markvoelker.github.io/blog_test/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DefCore Misconceptions Part 2: Debunking Advisory Status</title>
-      <link>http://localhost:1313/blog_test/defcore-misconceptions-2</link>
+      <link>http://markvoelker.github.io/blog_test/defcore-misconceptions-2</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog_test/defcore-misconceptions-2</guid>
+      <guid>http://markvoelker.github.io/blog_test/defcore-misconceptions-2</guid>
       <description>&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://wiki.openstack.org/wiki/DefCore&#34;&gt;DefCore&lt;/a&gt; isn&amp;rsquo;t a new
 creature in the OpenStack community: it&amp;rsquo;s been in
 discussion since at least 2013.  However it was only earlier in 2015
@@ -434,10 +186,10 @@ DefCore Committee a line at
     
     <item>
       <title>DefCore Misconceptions Part 1: Leading vs Trailing Indicators</title>
-      <link>http://localhost:1313/blog_test/defcore-misconceptions-1</link>
+      <link>http://markvoelker.github.io/blog_test/defcore-misconceptions-1</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog_test/defcore-misconceptions-1</guid>
+      <guid>http://markvoelker.github.io/blog_test/defcore-misconceptions-1</guid>
       <description>&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://wiki.openstack.org/wiki/DefCore&#34;&gt;DefCore&lt;/a&gt; isn&amp;rsquo;t a new
 creature in the OpenStack community: it&amp;rsquo;s been in
 discussion since at least 2013.  However it was only earlier in 2015
