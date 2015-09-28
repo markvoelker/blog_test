@@ -6,7 +6,6 @@ url = "/defcore-misconceptions-2"
 socialsharing = true
 description = "Advisory capabilities don't necessarily become required.  Let's debunk some myths about the DefCore state machine!"
 categories = ["DefCore","OpenStack"]
-draft = false
 +++
 
 *[DefCore](https://wiki.openstack.org/wiki/DefCore) isn't a new 
