@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Technology is Fun Because It&#39;s Always Changing</title>
-    <link>http://markvoelker.github.io/blog/posts/</link>
+    <link>http://markvoelker.github.io/blog_test/posts/</link>
     <description>Recent content in Posts on Technology is Fun Because It&#39;s Always Changing</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 28 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://markvoelker.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://markvoelker.github.io/blog_test/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DefCore Misconceptions Part 2: Debunking Advisory Status</title>
-      <link>http://markvoelker.github.io/blog/defcore-misconceptions-2</link>
+      <link>http://markvoelker.github.io/blog_test/defcore-misconceptions-2</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://markvoelker.github.io/blog/defcore-misconceptions-2</guid>
+      <guid>http://markvoelker.github.io/blog_test/defcore-misconceptions-2</guid>
       <description>&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://wiki.openstack.org/wiki/DefCore&#34;&gt;DefCore&lt;/a&gt; isn&amp;rsquo;t a new
 creature in the OpenStack community: it&amp;rsquo;s been in
 discussion since at least 2013.  However it was only earlier in 2015
@@ -186,10 +186,10 @@ DefCore Committee a line at
     
     <item>
       <title>DefCore Misconceptions Part 1: Leading vs Trailing Indicators</title>
-      <link>http://markvoelker.github.io/blog/defcore-misconceptions-1</link>
+      <link>http://markvoelker.github.io/blog_test/defcore-misconceptions-1</link>
       <pubDate>Fri, 25 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://markvoelker.github.io/blog/defcore-misconceptions-1</guid>
+      <guid>http://markvoelker.github.io/blog_test/defcore-misconceptions-1</guid>
       <description>&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://wiki.openstack.org/wiki/DefCore&#34;&gt;DefCore&lt;/a&gt; isn&amp;rsquo;t a new
 creature in the OpenStack community: it&amp;rsquo;s been in
 discussion since at least 2013.  However it was only earlier in 2015
