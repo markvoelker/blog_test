@@ -5,13 +5,13 @@ date = "2015-09-25"
 url = "/defcore-misconceptions-1"
 socialsharing = true
 description = "Did you know DefCore is more of an indication of what the market has determined to be interoperable than a visionary standard that tells the market what to think?"
-categories = ["DefCore","OpenStack","Misconceptions"]
+categories = ["DefCore","OpenStack"]
 +++
 
 *[DefCore](https://wiki.openstack.org/wiki/DefCore) isn't a new 
 creature in the OpenStack community: it's been in
 discussion since at least 2013.  However it was only earlier in 2015
-that adherance to DefCore Guidelines became a requirement for products
+that adherence to DefCore Guidelines became a requirement for products
 that want to use the OpenStack name and OpenStack Powered logo.  As a
 result, a lot more people are now interested in DefCore than in the
 past.  As we've started receiving a lot more feedback about DefCore,
@@ -58,7 +58,7 @@ indicator, we find:
   the TC says a Capability is going away in the future, no points are
   awarded even if the Capability isn't gone yet.
 * [Complete](http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n61): **trailing** (sort of).  If the capability is plugin dependent,
-  all plugins have to support it.  That doesn't always happen immediatly
+  all plugins have to support it.  That doesn't always happen immediately
   when a feature is released (unless the project requires it) so we'll
   call that a trailing indicator.  
 * [Stable](http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n58): **trailing**.  The capability has to have been present in 3 or
@@ -67,14 +67,14 @@ indicator, we find:
 * [Foundational](http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n84): **trailing**.  Other capabilities are unlikely to
   be dependent on a very new thing.  In fact there are numerous examples
   of the opposite: for instance, until around the Juno timeframe
-  neutronclient (on which any Neutron capabilties that require
+  neutronclient (on which any Neutron capabilities that require
   authentication would depend) supported only the Keystone v2 API.  The
   Keystone v3 API was introduced as far back as Grizzly.
 * [Atomic](http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n87): **neither**.  
 * [Proximity](http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n90): **neither**.
 * [Discoverable](http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n70): **neither**.
 * [Documented](http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n73): **neither** (or maybe in some instances trailing).  In
-  most cases major new capabilties get documented when released (the
+  most cases major new capabilities get documented when released (the
   community has generally gotten a lot better about this over the years
   IMHO).  There are still some cases where a capability isn't well
   documented up front though, and does get documented at some later
@@ -87,7 +87,7 @@ indicator, we find:
   here).
 
 So of the 12 criteria, 7 are looking at trailing indicators of adoption,
-4 aren’t really either, and 1 is a leading indicator.  It’s
+4 aren't really either, and 1 is a leading indicator.  It's
 also maybe worth pointing out that using current levels of real-world
 interoperability as the starting point has been [discussed by longtime
 Board members since at least 2013](https://blogs.gnome.org/markmc/2013/10/30/openstack-core-and-interoperability/),
